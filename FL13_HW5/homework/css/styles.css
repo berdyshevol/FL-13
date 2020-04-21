@@ -170,9 +170,10 @@ ul {
 }
 
 .post__text {
-  padding-top: 1vw;
+  padding-top: 4vw;
   line-height: 1.5;
-  font-size: 0.4rem;
+  /* font-size: 0.4rem; */
+  font-size: 3vw;
 }
 
 .post__date {
@@ -217,11 +218,11 @@ ul {
 .news__text {
   margin-top: 20px;
   line-height: 1.5;
-  font-size: 0.4rem;
+  font-size: 3vw;
 }
 .news__link {
   margin-top: 15px;
-  font-size: 0.4rem;
+  font-size: 3vw;
 }
 .news__link > a {
   display: inline-block;
@@ -282,28 +283,25 @@ ul {
 
 .post:last-child .post__text {
   line-height: 1.5;
-  font-size: 0.4rem;
+  font-size: 3vw;
+}
+.post:last-child .post__date {
+  display: none;
 }
 
+/* footer */
 .footer {
-  margin-top: 0;
+  margin-top: 20px;
+  padding-top: 25px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   color:#fff;
   background-color: #162b4d;
-  font-size: 0.5rem;
+  font-size: 3vw;
   line-height: 1.5;
   text-align: center;
   height: 42vw;
-}
-
-.footer__copyright {
-  padding-top: 13px;
-}
-
-.footer__design {
-  margin-top: 10px;
 }
 
 /* apply grid to tablets  >480 */
@@ -390,8 +388,8 @@ ul {
   }
   .post__text {
     margin-top: 8px;
-    font-size: 0.9rem;
-    font-weight: 700;
+    font-size: 1.9vw;
+    font-weight: 500;
   }
   .post__date {
     font-size: 2rem;
@@ -412,7 +410,8 @@ ul {
     font-size: 2.4rem;
   }
   .post:last-child .post__text {
-    font-size: 0.9rem;
+    font-size: 1.9vw;
+    font-weight: 500
   }
   .post:last-child .post__caption {
     height: 105%;
@@ -438,7 +437,8 @@ ul {
     font-size: 1.6rem;
   }
   .news__text {
-    font-size: 0.9rem;
+    font-size: 1.9vw;
+    font-weight: 500;
   }
   .news__link {
     font-size: 0.9rem;
@@ -447,7 +447,8 @@ ul {
   /* footer */
   .footer {
     margin-bottom: 0px;
-    font-size: 1rem;
+    font-size: 1.9vw;
+    font-weight: 500;
     line-height: 1.5;
     text-align: center;
     height: 25vw;
@@ -584,7 +585,7 @@ ul {
   .post__info {
     padding-left: 30px;
     padding-right: 30px;
-    width: 85%;
+    width: auto;
   }
   
   .post__title {
@@ -605,8 +606,8 @@ ul {
     margin-top: 23px;
     margin-bottom: 23px;
     font-size: 2.3rem;
-    padding: 0 5px;
-    width: 15%;
+    padding: 0 10px;
+    width: auto;
   }
   .post__date > span {
     font-size: 1rem;
@@ -629,9 +630,6 @@ ul {
     line-height: 2;
     font-size: 1.1vw;
     font-weight: 400;
-  }
-  .post:last-child .post__date {
-    display: none;
   }
 
   .post:last-child img {
@@ -666,21 +664,21 @@ ul {
 
   /* footer */
   .footer {
+    margin-top: 5px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0px;
     font-size: 1.1vw;
     font-weight: 400;
     line-height: 1.5;
     text-align: left;
     height: 100%;
-    padding: 30px 20px;
+    padding: 15px;
   }
-  .footer__copyright {
-    padding-top: 0;   
+  .footer__copyright { 
+    width: auto;
   }
   .footer__design {
-    padding-left: 50%;
+    width: auto;
   }
 }
