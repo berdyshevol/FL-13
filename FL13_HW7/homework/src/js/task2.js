@@ -6,7 +6,6 @@ const MAX = 5;
 const PRIZE = [100, 50, 25];
 
 // main logic
-
 if (step1(window.confirm('Do you want to play a game?'))) {
     // initialization
     let newGame = true;
@@ -32,12 +31,21 @@ function step1(result) {
 }
 
 function initSession() {
-    return {max: MAX, attempt: 0, prize: [...PRIZE], totalPrize: 0};
+    return {max: MAX,
+            attempt: 0,
+            prize: [...PRIZE],
+            totalPrize: 0
+           };
 }
 
 function renewSession(session) {
-    return {max: 2 * session.max, attempt: 0, prize: session.prize.map(x => 2 * x), totalPrize: session.totalPrize};
+    return {max: 2 * session.max,
+            attempt: 0,
+            prize: session.prize.map(x => 2 * x),
+            totalPrize: session.totalPrize
+           };
 }
+
 function game(session) {
     while (session.attempt < ATTEMPTS) {
         const randomNumber= getRandomNumber(session.max);
@@ -47,7 +55,7 @@ function game(session) {
         }
         if (randomNumber === +guessNumber) {
             alert(`Congratulation, you won!
-Your prize is: ${session.prize[session.attempt]} $.`);
+Your prize is: ${session.prize[session.attempt]}$.`);
             session.totalPrize += session.prize[session.attempt];
             if (doYouWantToContinue()) {
                 session = renewSession(session);
@@ -60,8 +68,6 @@ Your prize is: ${session.prize[session.attempt]} $.`);
     }
     thankYouForParticipation(session.totalPrize);
 }
-
-
 
 function getRandomNumber(max) {
     return Math.floor(Math.random() * (max + 1));
