@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // Initial Settings
 const ATTEMPTS = 3;

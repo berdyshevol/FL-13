@@ -1,4 +1,5 @@
-// Your code goes here
+'use strict';
+
 let str = prompt('Input a word');
 if (isEmptyString(str)
     || isStringSpacesOnly(str)) {
