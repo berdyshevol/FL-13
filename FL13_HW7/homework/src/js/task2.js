@@ -7,7 +7,6 @@ const PRIZE = [100, 50, 25];
 
 // main logic
 if (step1(window.confirm('Do you want to play a game?'))) {
-    // initialization
     let newGame = true;
     while(newGame) {
         game();
