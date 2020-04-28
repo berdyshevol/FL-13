@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 // Initial Settings
 const ATTEMPTS = 3;
@@ -9,13 +9,9 @@ const PRIZE = [100, 50, 25];
 if (step1(window.confirm('Do you want to play a game?'))) {
     // initialization
     let newGame = true;
-    let session = initSession();
-    // drive loop
     while(newGame) {
-        game(session);
-        if (doYouWantToPlayAgain()) {
-            session = initSession();
-        } else {
+        game();
+        if (!doYouWantToPlayAgain()) {
             newGame = false;
         }
     }
@@ -30,14 +26,6 @@ function step1(result) {
     return true;
 }
 
-function initSession() {
-    return {max: MAX,
-            attempt: 0,
-            prize: [...PRIZE],
-            totalPrize: 0
-           };
-}
-
 function renewSession(session) {
     return {max: 2 * session.max,
             attempt: 0,
@@ -46,7 +34,13 @@ function renewSession(session) {
            };
 }
 
-function game(session) {
+function game() {
+    let session = {max: MAX,
+                   attempt: 0,
+                   prize: [...PRIZE],
+                   totalPrize: 0
+                  };
+
     while (session.attempt < ATTEMPTS) {
         const randomNumber= getRandomNumber(session.max);
         const guessNumber = askUserGuess(session,randomNumber);

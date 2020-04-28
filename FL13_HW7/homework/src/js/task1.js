@@ -1,5 +1,3 @@
-'use strict';
-
 const alertMessage = {
     'is an empty line or Esc': 'Canceled.',
     'length less than 4 symbols': 'I don\'t know any users having name length less than 4 symbols',
