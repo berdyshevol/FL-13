@@ -1,0 +1,105 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+input {
+    margin: 0;
+}
+
+button {
+    width: 100%;
+    margin: 0;
+}
+
+.app {
+    margin: 30px;
+}
+
+.app__form {
+    margin-top: 30px;
+}
+
+.form__button {
+    width: auto;
+}
+
+.app__list {
+    margin-top: 30px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.row__item {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+}
+
+.row__item--id {
+    width: 100px;
+    text-align: left;
+}
+
+.row__input {
+    width: 100%;
+}
+
+.row__item--button {
+    width: 70px;
+    margin: 0;
+}
+
+.row__button button {
+    width: 100%;
+    margin: 0;
+}
+
+#app-container {
+    position: relative;
+}
+
+.app__loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
