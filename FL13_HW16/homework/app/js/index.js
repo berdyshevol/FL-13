@@ -170,15 +170,19 @@ class AppForm extends Component {
   }
 
   _buttonsDisable() {
-    this._element
-      .querySelector('[data-component="form-button-add-new-user"]')
-      .disabled = true;
+    const btnAdd = this._element
+      .querySelector('[data-component="form-button-add-new-user"]');
+    if (btnAdd) {
+      btnAdd.disabled = true;
+    }
   }
 
   _buttonsEnable() {
-    this._element
-      .querySelector('[data-component="form-button-add-new-user"]')
-      .disabled = false;
+    const btnAdd = this._element
+      .querySelector('[data-component="form-button-add-new-user"]');
+    if (btnAdd) {
+      btnAdd.disabled = false;
+    }
   }
 
   _render() {
@@ -202,8 +206,9 @@ class AppForm extends Component {
 class AppList extends Component {
   constructor({ element, loader }) {
     super({ element });
+    this._loader = loader;
     this._onAllEvents();
-    this._loadList(loader);
+    this._initList();
   }
 
   _onAllEvents() {
@@ -216,27 +221,35 @@ class AppList extends Component {
   }
 
   _buttonsDisable(person) {
-    this._element
-      .querySelector(`[data-button-update="${ person.id }"]`)
-      .disabled = true;
-    this._element
-      .querySelector(`[data-button-delete="${ person.id }"]`)
-      .disabled = true;
+    const btnUpdate = this._element
+      .querySelector(`[data-button-update="${ person.id }"]`);
+    if (btnUpdate) {
+      btnUpdate.disabled = true;
+    }
+    const btnDelete = this._element
+      .querySelector(`[data-button-delete="${ person.id }"]`);
+    if (btnDelete) {
+      btnDelete.disabled = true;
+    }
   }
 
   _buttonsEnable(person) {
-    this._element
-      .querySelector(`[data-button-update="${ person.id }"]`)
-      .disabled = false;
-    this._element
-      .querySelector(`[data-button-delete="${ person.id }"]`)
-      .disabled = false;
+    const btnUpdate = this._element
+      .querySelector(`[data-button-update="${ person.id }"]`);
+    if (btnUpdate) {
+      btnUpdate.disabled = false;
+    }
+    const btnDelete = this._element
+      .querySelector(`[data-button-delete="${ person.id }"]`);
+    if (btnDelete) {
+      btnDelete.disabled = false;
+    }
   }
 
-  _loadList(loader) {
-    loader.emit('loader-on');
+  _initList() {
+    this._loader.show();
     this.refresh( () => {
-      loader.emit('loader-off');
+      this._loader.hide();
     });
   }
 
@@ -307,14 +320,6 @@ class UserAppPage {
   _initLoader() {
     this._appLoader = new AppLoader({
       element: this._element.querySelector('[data-component="app-loader"]')
-    });
-
-    this._appLoader.subscribe('loader-on', () => {
-      this._appLoader.show()
-    });
-
-    this._appLoader.subscribe('loader-off', () => {
-      this._appLoader.hide()
     });
   }
 
